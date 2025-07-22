@@ -26,7 +26,8 @@ jobs:
         run: git clone https://github.com/libbyf/dagger-module.git .dagger/module
 
       - name: Create dagger.json config
-        run: echo '{ "module": "./.dagger/module" }' > dagger.json
+        run: |
+          echo '{ "module": "./.dagger/module" }' > dagger.json
 
       - name: Call container-echo from local module
         run: dagger call container-echo --string-arg libby
