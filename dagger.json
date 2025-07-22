@@ -1,7 +1,0 @@
-{
-  "name": "cicd-pipeline",
-  "sdk": "python",
-  "dependencies": [
-    "github.com/libbyf/dagger-module@main"
-  ]
-}
