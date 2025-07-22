@@ -1,4 +1,4 @@
-name: Run Dagger
+name: Run Basic Python Tests
 
 on:
   workflow_dispatch:

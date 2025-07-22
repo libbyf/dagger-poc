@@ -1,4 +1,4 @@
-name: Run Dagger
+name: Run Basic Container
 
 on:
   workflow_dispatch:
