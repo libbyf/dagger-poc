@@ -1,0 +1,7 @@
+{
+  "name": "shared-cicd",
+  "sdk": "python",
+  "dependencies": [
+    "./dagger-module"
+  ]
+}
