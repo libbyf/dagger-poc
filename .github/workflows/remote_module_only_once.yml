@@ -1,4 +1,4 @@
-name: Remote Module
+name: Remote Module Only Once
 
 on:
   workflow_dispatch:
