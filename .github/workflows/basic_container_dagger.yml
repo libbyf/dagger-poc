@@ -7,7 +7,7 @@ jobs:
   dagger:
     runs-on: ubuntu-latest
     container:
-      image: registry.dagger.io/engine:v0.18.12  # or latest version
+      image: registry.dagger.io/engine:v0.18.14  # or latest version
       options: --user root  # sometimes needed to avoid permission errors
     steps:
       - uses: actions/checkout@v3
