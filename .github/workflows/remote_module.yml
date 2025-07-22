@@ -26,4 +26,4 @@ jobs:
         run: |
           dagger call container-echo \
             --source=github.com/libbyf/dagger-module \
-            --string-arg libby
+            --help
