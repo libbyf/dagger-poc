@@ -26,4 +26,4 @@ jobs:
         run: |
           dagger init
           dagger install github.com/libbyf/dagger-module
-          dagger call functions
+          dagger functions
