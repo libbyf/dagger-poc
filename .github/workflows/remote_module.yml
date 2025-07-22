@@ -1,0 +1,23 @@
+name: Basic Container
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dagger:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.dagger.io/engine:v0.18.14  # or latest version
+      options: --user root  # sometimes needed to avoid permission errors
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python in container
+        run: |
+          apk update
+          apk add --no-cache python3 py3-pip
+          pip3 install dagger-io
+      - name: Call remote Dagger module
+        run: |
+          dagger call container-echo \
+            --source=github.com/libbyf/dagger-module \
+            --string-arg libby
