@@ -25,6 +25,9 @@ jobs:
       - name: Clone Dagger module
         run: git clone https://github.com/libbyf/dagger-module.git .dagger/module
 
+      - name: Override dagger.json name
+        run: |
+          echo '{ "name": "github.com/libbyf/dagger-module" }' > .dagger/module/dagger.json
       - name: Create dagger.json config
         run: |
           echo '{ "module": "./.dagger/module" }' > dagger.json
