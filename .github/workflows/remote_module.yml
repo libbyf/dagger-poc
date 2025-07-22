@@ -23,10 +23,5 @@ jobs:
           curl -L https://dl.dagger.io/dagger/install.sh | sh
           echo "$PWD/bin" >> $GITHUB_PATH
       - name: Call remote Dagger module
-        run: |
-#          dagger init
-#          dagger install github.com/libbyf/dagger-module
-#          dagger functions
-           dagger -m github.com/libbyf/dagger-module@main
-           call container-echo --string-arg libby
+        run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg libby
 
