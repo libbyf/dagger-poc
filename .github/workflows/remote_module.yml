@@ -24,6 +24,6 @@ jobs:
           echo "$PWD/bin" >> $GITHUB_PATH
       - name: Call remote Dagger module
         run: |
-          dagger call container-echo \
-            --source=github.com/libbyf/dagger-module \
-            --help
+          dagger init
+          dagger install github.com/libbyf/dagger-module
+          dagger call container-echo --help
