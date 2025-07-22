@@ -27,6 +27,6 @@ jobs:
 #          dagger init
 #          dagger install github.com/libbyf/dagger-module
 #          dagger functions
-          dagger -m github.com/libbyf/dagger-module@main
-          call container-echo --string-arg libby
+           dagger -m github.com/libbyf/dagger-module@main
+           call container-echo --string-arg libby
 
