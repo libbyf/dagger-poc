@@ -1,0 +1,46 @@
+name: Remote Module Multiple Calls
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dagger1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install dagger-io
+
+      - name: Install curl and dagger
+        run: |
+          curl -L https://dl.dagger.io/dagger/install.sh | sh
+          echo "$PWD/bin" >> $GITHUB_PATH
+      - name: Call first Dagger module
+        run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg libby
+  dagger2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install dagger-io
+
+      - name: Install curl and dagger
+        run: |
+          curl -L https://dl.dagger.io/dagger/install.sh | sh
+          echo "$PWD/bin" >> $GITHUB_PATH
+      - name: Call first Dagger module
+        run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg libby
+
+
