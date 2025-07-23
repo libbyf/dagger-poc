@@ -26,5 +26,8 @@ jobs:
         run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg libby
       - name: Call second Dagger module
         run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg rita
+      - name: Call again first Dagger module
+        run: dagger -m github.com/libbyf/dagger-module@main call container-echo --string-arg libby
+
 
 
