@@ -21,10 +21,8 @@ jobs:
         run: |
           curl -L https://dl.dagger.io/dagger/install.sh | sh
           echo "$PWD/bin" >> $GITHUB_PATH
-      - name: Call functions
-        run: dagger functions
       - name: Call first module
-        run: dagger call container-echo --string-arg libby
+        run: dagger dagger -m ./dagger-module call container-echo --string-arg libby
       - name: Call second module
-        run: dagger call container-echo --string-arg rita
+        run: dagger dagger -m ./dagger-module call container-echo --string-arg rita
 
