@@ -1,4 +1,4 @@
-name: Remote Module Multiple Calls
+name: Remote Module Multiple Jobs
 
 on:
   workflow_dispatch:
