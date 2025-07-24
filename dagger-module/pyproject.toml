@@ -10,3 +10,8 @@ build-backend = "hatchling.build"
 
 [tool.uv.sources]
 dagger-io = { path = "sdk", editable = true }
+
+
+[tool.poetry.dependencies]
+dagger-io = "^0.9.0"
+
