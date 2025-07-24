@@ -3,7 +3,7 @@ from dagger import dag, function, object_type
 
 
 @object_type
-class Cicd1:
+class Cicd:
     @function
     def container_echo(self, string_arg: str) -> dagger.Container:
         """Returns a container that echoes whatever string argument is provided"""
