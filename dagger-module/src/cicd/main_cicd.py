@@ -1,8 +1,9 @@
 import dagger
-from dagger import dag, function, object_type, module
+from dagger import dag, function, object_type
 
 
-@module
+# @module
+@object_type
 class Cicd:
     @function
     def container_echo(self, string_arg: str) -> dagger.Container:
