@@ -1,0 +1,3 @@
+[submodule "sub-modules"]
+	path = sub-modules
+	url = https://github.com/libbyf/dagger-module
