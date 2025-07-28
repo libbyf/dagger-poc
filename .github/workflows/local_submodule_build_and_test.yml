@@ -20,19 +20,19 @@ jobs:
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
       - name: Build Java
-      - run: dagger -m ./sub-modules call build --base-config.component-type micro-service --base-config.language java --base-config.version 17 --base-config.source ./java-app
+        run: dagger -m ./sub-modules call build --base-config.component-type micro-service --base-config.language java --base-config.version 17 --base-config.source ./java-app
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
       - name: Test Java
-      - run: dagger -m ./sub-modules call test --base-config.component-type micro-service --base-config.language java --base-config.version 17 --base-config.source ./java-app
+        run: dagger -m ./sub-modules call test --base-config.component-type micro-service --base-config.language java --base-config.version 17 --base-config.source ./java-app
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
       - name: Build Python
-      - run: dagger -m ./sub-modules call build --base-config.component-type micro-service --base-config.language python --base-config.version 3.10 --base-config.source ./python-app
+        run: dagger -m ./sub-modules call build --base-config.component-type micro-service --base-config.language python --base-config.version 3.10 --base-config.source ./python-app
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
       - name: Test Python
-      - run: dagger -m ./sub-modules call test --base-config.component-type micro-service --base-config.language python --base-config.version 3.10 --base-config.source ./python-app
+        run: dagger -m ./sub-modules call test --base-config.component-type micro-service --base-config.language python --base-config.version 3.10 --base-config.source ./python-app
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
 
