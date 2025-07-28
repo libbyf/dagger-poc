@@ -1,0 +1,30 @@
+name: Local Submodules & Functions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dagger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0 # needed to allow fetching history
+      - name: Update submodules to latest on their branch
+        run: |
+             git submodule foreach '
+               branch=$(git config -f $toplevel/.gitmodules submodule.$name.branch)
+               echo "Fetching latest for $name on branch $branch"
+               git fetch origin $branch
+               git checkout origin/$branch
+             '
+      - name: Install curl and dagger
+        run: |
+          curl -L https://dl.dagger.io/dagger/install.sh | sh
+          echo "$PWD/bin" >> $GITHUB_PATH
+      - name: Dagger Functions
+        run: dagger -m ./sub-modules functions
+        env:
+          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
