@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Java
-        uses: libbyf/github-actions-poc/.github/actions/cicd/build@master
+        uses: libbyf/github-actions-poc/.github/actions/cicd/build@main
         with:
           component_type: micro-service
           language: java
           version: 17
           source: ./java-app
       - name: Test Java
-        uses: libbyf/github-actions-poc/.github/actions/cicd/build-and-test@master
+        uses: libbyf/github-actions-poc/.github/actions/cicd/build-and-test@main
         with:
           component_type: micro-service
           language: java
