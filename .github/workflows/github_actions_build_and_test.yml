@@ -27,12 +27,12 @@ jobs:
         with:
           component_type: micro-service
           language: python
-          version: 3.10
+          version: '3.10'
           source: ./python-app
       - name: Test Python
         uses: libbyf/github-actions-poc/.github/actions/cicd/build-and-test@main
         with:
           component_type: micro-service
           language: python
-          version: 3.10
+          version: '3.10'
           source: ./python-app
