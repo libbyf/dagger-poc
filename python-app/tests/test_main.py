@@ -1,4 +1,4 @@
-from ..main import add
+from main import add
 import pytest
 
 @pytest.mark.test
