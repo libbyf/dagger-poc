@@ -1,0 +1,34 @@
+name: Github Actions - Build and Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dagger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Java
+        uses: libbyf/github-actions-poc/.github/actions/cicd/build@master
+        with:
+          component_type: micro-service
+          language: java
+          version: 17
+          source: ./java-app
+      - name: Test Java
+        uses: libbyf/github-actions-poc/.github/actions/cicd/build-and-test@master
+        with:
+          component_type: micro-service
+          language: java
+          version: 17
+          source: ./java-app
+#      - name: Build Python
+#        run: dagger -m ./sub-modules call build --component-type micro-service --language python --version 3.10 --source ./python-app
+#        env:
+#          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+#      - name: Test Python
+#        run: dagger -m ./sub-modules call test --component-type micro-service --language python --version 3.10 --source ./python-app
+#        env:
+#          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+#
